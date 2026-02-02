@@ -13,11 +13,11 @@ All seven versions of each stories were extracted and stored along with their re
 
 ## Tokenizers
 
-Each of the stories was tokenized using the English SpaCy tokenizer, the BPE tokenizer of GPT2 and the Word-Piece tokenizer of the BERT model. This process was done twice, once on its own to extract and store the tokens and their IDs, and once integrated in the embedding extraction code.
+Each of the stories was tokenized using the English SpaCy tokenizer, the BPE tokenizer of GPT2 and the Word-Piece tokenizer of the BERT model. The tokens, their IDs, and their tensors (hidden states or embeddings) were extracted and stored.
 
 ## Models
 
-The models used to conduct the experiment, "GPT2-medium" and "bert-large-uncased", are open-source twenty-four layer pretrained models whose codes are available online. The models were loaded and fed the stories one by one ; the hidden states of the layers of interest (2, 8, 24) were extracted and stored.
+The models used to conduct the experiment, "GPT2-medium" and "bert-large-uncased", are open-source twenty-four layer pretrained models whose codes are available online (. The models were loaded and fed the stories one by one ; the hidden states of the layers of interest (2, 8, 24) were extracted and stored.
 
 ## Methods
 
