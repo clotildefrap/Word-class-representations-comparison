@@ -17,7 +17,15 @@ Each of the stories was tokenized using the English SpaCy tokenizer, the BPE tok
 
 ## Models and process
 
-The models used to conduct the experiment, "GPT2-medium" and "bert-large-uncased", are open-source twenty-four layer pretrained models whose codes are available on Hugging Face (https://huggingface.co/openai-community/gpt2-medium ; https://huggingface.co/google-bert/bert-large-uncased). The models were loaded and fed the stories one by one ; the hidden states of the layers of interest (2, 8, 24) were extracted and stored with their corresponding tokens and token IDs. 3D PCA was fitted on the data, which was then visualised (see plots below). The tokens obtained from the SpaCy tokenizer were systematically compared to the tokens produced by the tokenizers of GPT2 and BERT and the ones that did not match (we call them "misaligned tokens") were identified and stored. Using a Mahalanobis distance function that we adapt from https://www.geeksforgeeks.org/python/how-to-calculate-mahalanobis-distance-in-python/, we identiy the outliers
+The models used to conduct the experiment, "GPT2-medium" and "bert-large-uncased", are open-source twenty-four layer pretrained models whose codes are available on Hugging Face (https://huggingface.co/openai-community/gpt2-medium ; https://huggingface.co/google-bert/bert-large-uncased). The models were loaded and fed the stories one by one ; the hidden states of the layers of interest (2, 8, 24) were extracted and stored with their corresponding tokens and token IDs. 3D PCA was fitted on the data, which was then visualised (see plots below). The tokens obtained from the SpaCy tokenizer were systematically compared to the tokens produced by the tokenizers of GPT2 and BERT and the ones that did not match (we call them "misaligned tokens") were identified and stored. Using a Mahalanobis distance function that we adapt from https://www.geeksforgeeks.org/python/how-to-calculate-mahalanobis-distance-in-python/, we identify and flag the outliers, and check if they crrespond to the misaligned tokens.
 
 
 ## Code
+
+The code is available is this repository and had been designed to be reproducible and adaptable. 
+
+
+
+## Plots
+
+
