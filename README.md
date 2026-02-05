@@ -28,4 +28,5 @@ The code is available is this repository and had been designed to be reproducibl
 
 ## Plots
 
+All the plots were created using the Plotly library and are interactive. They are available in the repository and can be called individually through the index page.
 
