@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Story Selector</title>
+</head>
+<body>
+
+  <h1>Select a Story</h1>
+
+  <input type="number" id="storyNumber" placeholder="Enter story number">
+  <button onclick="goToStory()">Open</button>
+
+  <script>
+    function goToStory() {
+      const num = document.getElementById("storyNumber").value;
+      if (!num) {
+        alert("Enter a number");
+        return;
+      }
+      window.location.href = `stories/${num}.html`;
+    }
+  </script>
+
+</body>
+</html>
 
