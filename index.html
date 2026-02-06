@@ -5,22 +5,70 @@
 </head>
 <body>
 
-  <h1>Select a Story</h1>
+<h1>Select Story Version</h1>
 
-  <input type="number" id="storyNumber" placeholder="Enter story number">
-  <button onclick="goToStory()">Open</button>
+<label>
+  Model:
+  <select id="model">
+    <option value="gpt">gpt</option>
+    <option value="bert">bert</option>
+  </select>
+</label>
 
-  <script>
-    function goToStory() {
-      const num = document.getElementById("storyNumber").value;
-      if (!num) {
-        alert("Enter a number");
-        return;
-      }
-      window.location.href = `stories/${num}.html`;
-    }
-  </script>
+<br><br>
+
+<label>
+  Layer:
+  <select id="layer">
+    <option value="layer24">layer24</option>
+    <option value="layer2">layer2</option>
+    <option value="layer8">layer8</option>
+  </select>
+</label>
+
+<br><br>
+
+<label>
+  Story Number:
+  <input type="number" id="storyNumber" min="1">
+</label>
+
+<br><br>
+
+<label>
+  Reteller:
+  <select id="reteller">
+    <option value="GPT_R1">GPT_R1</option>
+    <option value="GPT_R2">GPT_R2</option>
+    <option value="GPT_R3">GPT_R3</option>
+    <option value="Retell_1_Human">Retell_1_Human</option>
+    <option value="Retell_2_Human">Retell_2_Human</option>
+    <option value="Retell_3_Human">Retell_3_Human</option>
+  </select>
+</label>
+
+<br><br>
+
+<button onclick="goToStory()">Open Story</button>
+
+<script>
+function goToStory() {
+  const model = document.getElementById("model").value;
+  const layer = document.getElementById("layer").value;
+  const number = document.getElementById("storyNumber").value;
+  const reteller = document.getElementById("reteller").value;
+
+  if (!number) {
+    alert("Please enter a story number.");
+    return;
+  }
+
+  const filename = `${model}_${layer}_story_${number}_${reteller}.html`;
+  const path = `stories/${filename}`;
+
+  window.location.href = path;
+}
+</script>
 
 </body>
 </html>
-
